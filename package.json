@@ -13,10 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.2",
-    "ts-node": "^8.5.4"
+    "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "ts-node": "^8.5.4",
     "@types/body-parser": "^1.17.1",
     "@types/express": "^4.17.2",
     "@types/node": "^12.12.17",
