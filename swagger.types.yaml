@@ -1,0 +1,25 @@
+definitions:
+  Error:
+    type: "object"
+    properties:
+      error:
+        type: string
+        description: "Message, that describes what went wrong"
+        example: "Error message"
+  OKResponse:
+    type: "object"
+    properties:
+      ok:
+        type: boolean
+        example: true
+  Metric:
+    type: "object"
+    properties:
+      value:
+        required: true
+        type: "number"
+        example: 17000.2
+      timestamp:
+        type: "number"
+        description: "If there is no timestamp, current UTC time will be used"
+        example: 1586881668

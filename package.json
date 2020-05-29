@@ -1,0 +1,36 @@
+{
+  "name": "service-heathchecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "npx pm2 start --node-args=\"-r esm\" dist/server.js --no-daemon",
+    "start:dev": "node_modules/.bin/ts-node ./server.ts",
+    "build": "node_modules/.bin/tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.5.4"
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.17.1",
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.17",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-jaeger": "0.0.16",
+    "mysql2": "^2.1.0",
+    "rollun-ts-rql": "^0.7.1",
+    "rollun-ts-utils": "0.0.5",
+    "schema-validator": "^3.3.1",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "typescript": "^3.7.3"
+  }
+}
