@@ -41,7 +41,7 @@ const compareStrategies = {
 		comparator: (rmModel: Array<string>, ebayModel: Array<string>): {modelMatchScore: number, modelPercentMatch: number} => {
 			const maxHashLength = Math.max(ebayModel.join('').length, rmModel.join('').length);
 
-			const cleanEbayModel = ebayModel.filter(word => rmModel.find(rmWord => rmWord === word));
+			const cleanEbayModel = ebayModel.filter(word => rmModel.find(rmWord => word.includes(rmWord) || rmWord.includes(word)));
 			const maxHash = cleanEbayModel.length > rmModel.length ? cleanEbayModel : rmModel;
 			let minHash = cleanEbayModel.length > rmModel.length ? rmModel : cleanEbayModel;
 			// const maxHashString = maxHash.join('');
@@ -52,7 +52,6 @@ const compareStrategies = {
 			const matchPercent = maxHash.reduce((percent, word) => {
 				// const similarWord = '';
 				let match = 0;
-				let idx = -1;
 				for (let i = 0; i < minHash.length; i++) {
 					const w = minHash[i];
 					const maxWord = word.length > w.length ? word : w;
@@ -60,14 +59,14 @@ const compareStrategies = {
 
 					if (maxWord.includes(minWord) && (minWord.length * 100 / maxWord.length) > match) {
 						match = minWord.length * 100 / maxWord.length;
-						idx = i;
+						minHash = minHash.filter((_, idx) => i !== idx);
 					}
 					if (match === 100) break;
 				}
-				if (idx >= 0) {
-					minHash = minHash.filter((_, i) => i !== idx);
-				}
-				return percent + match / maxHash.length;
+				// if (idx >= 0) {
+				// 	minHash = minHash.filter((_, i) => i !== idx);
+				// }
+				return percent + match / ebayModel.length;
 			}, 0);
 			return {
 				modelMatchScore: matchPercent > 0 ? 2 : 0,
@@ -103,7 +102,7 @@ export function findCompatibles(axios, logger) {
                                                      limit 1 offset ?`, [offset]) as Array<EbayVehicle>;
 			console.log(`Trying to match ${offset + 1} ebay item`);
 			if (!ebayVehicle) break;
-			let matchScore = -1;
+			let matchScore = 0;
 			let model_match_percent = 0;
 			let compatibleVehicleIdx = -1;
 			let hashes = {
@@ -124,7 +123,11 @@ export function findCompatibles(axios, logger) {
 				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(rmModelHash, ebayModelHash);
 				// check comparing results
 				let currentMatchScore = makeScore + modelMatchScore + yearScore;
-				if (currentMatchScore > matchScore && modelPercentMatch > model_match_percent) {
+				if (currentMatchScore > matchScore) {
+					// reset modal_match_percent if  modalScore goes up.
+					model_match_percent = 0;
+				}
+				if (currentMatchScore >= matchScore && modelPercentMatch >= model_match_percent) {
 					matchScore = currentMatchScore;
 					if (modelMatchScore > 0) {
 						model_match_percent = modelPercentMatch;
