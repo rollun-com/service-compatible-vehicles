@@ -15,13 +15,13 @@ namespace HashMaker {
 
 	export const ebayMake = (make: string) => {
 		return make
-			.replace(/[\s\-]+/g, '')
+			.replace(/[\s\-\\/;:%$#№@"']+/g, '')
 			.toLowerCase();
 	};
 
-	export const model = (model: string) => {
+	export const model = (model: string): Array<string> => {
 		return model
-			.replace(/[\-\\/%.,;:#№]/g, '')
+			.replace(/[\-\\/;:#$!@()^№+]/g, '')
 			.toLowerCase()
 			.split(/\s+/)
 			.sort((a, b) => {
@@ -32,14 +32,47 @@ namespace HashMaker {
 				}
 				return strcmp(a, b);
 			})
-			.join('');
+		// .join('');
 	}
 }
 
 const compareStrategies = {
 	compareModel: {
-		comparator: (rmModel, ebayModel) => {
-			return (ebayModel.includes(rmModel) || rmModel.includes(ebayModel)) ? 2 : 0;
+		comparator: (rmModel: Array<string>, ebayModel: Array<string>): {modelMatchScore: number, modelPercentMatch: number} => {
+			const maxHashLength = Math.max(ebayModel.join('').length, rmModel.join('').length);
+
+			const cleanEbayModel = ebayModel.filter(word => rmModel.find(rmWord => rmWord === word));
+			const maxHash = cleanEbayModel.length > rmModel.length ? cleanEbayModel : rmModel;
+			let minHash = cleanEbayModel.length > rmModel.length ? rmModel : cleanEbayModel;
+			// const maxHashString = maxHash.join('');
+			// const minHashString = minHash.join('');
+
+			// const isMatch = minHashString ? maxHashString.includes(minHashString) : false;
+			// const isMatch = !!maxHash.some(word => minHash.find(w => w.includes(word) || word.includes(w)));
+			const matchPercent = maxHash.reduce((percent, word) => {
+				// const similarWord = '';
+				let match = 0;
+				let idx = -1;
+				for (let i = 0; i < minHash.length; i++) {
+					const w = minHash[i];
+					const maxWord = word.length > w.length ? word : w;
+					const minWord = word.length > w.length ? w : word;
+
+					if (maxWord.includes(minWord) && (minWord.length * 100 / maxWord.length) > match) {
+						match = minWord.length * 100 / maxWord.length;
+						idx = i;
+					}
+					if (match === 100) break;
+				}
+				if (idx >= 0) {
+					minHash = minHash.filter((_, i) => i !== idx);
+				}
+				return percent + match / maxHash.length;
+			}, 0);
+			return {
+				modelMatchScore: matchPercent > 0 ? 2 : 0,
+				modelPercentMatch: matchPercent
+			}
 		}
 	},
 	compareMake: {
@@ -51,13 +84,6 @@ const compareStrategies = {
 	compareYear: {
 		comparator: (rmYear, ebayYear) => {
 			return ebayYear === rmYear ? 1 : 0;
-		}
-	},
-	modelMatchPercent: {
-		comparator: (rmModel, ebayModel) => {
-			return rmModel.length > ebayModel.length
-				? ebayModel.length * 100 / rmModel.length
-				: rmModel.length * 100 / ebayModel.length;
 		}
 	}
 };
@@ -95,14 +121,13 @@ export function findCompatibles(axios, logger) {
 				const makeScore = compareStrategies.compareMake.comparator(rmMakeHash, ebayMakeHash, makesAliasesCache);
 				// model
 				const rmModelHash = rmVehicle.modelHashCache || (rmVehicle.modelHashCache = HashMaker.model(rmVehicle.model));
-				const modelScore = compareStrategies.compareModel.comparator(rmModelHash, ebayModelHash);
-
+				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(rmModelHash, ebayModelHash);
 				// check comparing results
-				let currentMatchScore= makeScore + modelScore + yearScore;
-				if (currentMatchScore > matchScore) {
+				let currentMatchScore = makeScore + modelMatchScore + yearScore;
+				if (currentMatchScore > matchScore && modelPercentMatch > model_match_percent) {
 					matchScore = currentMatchScore;
-					if (modelScore > 0) {
-						model_match_percent = compareStrategies.modelMatchPercent.comparator(rmModelHash, ebayModelHash)
+					if (modelMatchScore > 0) {
+						model_match_percent = modelPercentMatch;
 					}
 					compatibleVehicleIdx = idx;
 					hashes.ebay = `${ebayMakeHash}|${ebayModelHash}|${ebayVehicle.year}`;

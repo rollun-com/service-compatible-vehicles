@@ -41,31 +41,6 @@ export function refreshEbayVehicles(axios, logger) {
 				epid, make, model, model_submodel, submodel, year, vehicle_type, moto_type,
 				make, model, model_submodel, submodel, year, vehicle_type, moto_type
 			])
-			// const [vehicle] = await mysql.query(`select *
-			//                                      from ebay_vehicles
-			//                                      where make = ?
-			//                                        and model_submodel = ?`, [make, model_submodel]) as Array<EbayVehicle>;
-			// if (vehicle) {
-			// 	const startYear = +vehicle.start_year > +year ? year : vehicle.start_year;
-			// 	const endYear = +vehicle.end_year < +year ? year : vehicle.end_year;
-			// 	await mysql.query(`update ebay_vehicles
-			//                        set make           = ?,
-			//                            model          = ?,
-			//                            model_submodel = ?,
-			//                            submodel       = ?,
-			//                            start_year     = ?,
-			//                            end_year       = ?,
-			//                            vehicle_type   = ?,
-			//                            moto_type      = ?
-			//                        where epid = ?`, [
-			// 		make, model, model_submodel, submodel, startYear, endYear, vehicle_type, moto_type, vehicle.epid
-			// 	]);
-			// } else {
-			// 	await mysql.query(`insert into ebay_vehicles
-			//                        values (?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
-			// 		epid, make, model, model_submodel, submodel, year, year, vehicle_type, moto_type
-			// 	])
-			// }
 		}
 		console.log('Done!', count)
 		return count;

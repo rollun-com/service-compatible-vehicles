@@ -14,7 +14,7 @@ export interface RMVehicle {
 	make: string,
 	model: string,
 	makeHashCache?: string;
-	modelHashCache?: string;
+	modelHashCache?: Array<string>;
 }
 
 
