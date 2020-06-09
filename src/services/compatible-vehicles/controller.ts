@@ -18,9 +18,10 @@ export async function refreshRockyMountainVehiclesController(req: RequestWithAdd
 	try {
 		await refreshRMVehicles(req.axios, req.logger)();
 	} catch (e) {
-		return res.status(500).send({
-			error: `Error while refreshing RM vehicles: ${e}`
-		})
+		console.log(`Error while refreshing RM vehicles: ${e}`);
+		// return res.status(500).send({
+		// 	error: `Error while refreshing RM vehicles: ${e}`
+		// })
 	}
 	refreshRockyMountainVehiclesProcessRunning = false;
 }
@@ -39,9 +40,10 @@ export async function refreshEbayVehiclesController(req: RequestWithAddons, res:
 	try {
 		await refreshEbayVehicles(req.axios, req.logger)();
 	} catch (e) {
-		return res.status(500).send({
-			error: `Error while refreshing Ebay vehicles: ${e}`
-		})
+		console.log(`Error while refreshing Ebay vehicles: ${e}`);
+		// return res.status(500).send({
+		// 	error: `Error while refreshing Ebay vehicles: ${e}`
+		// })
 	}
 	refreshEbayVehiclesProcessRunning = false;
 }
@@ -60,9 +62,10 @@ export async function findCompatiblesController(req: RequestWithAddons, res: Res
 	try {
 		await findCompatibles(req.axios, req.logger)();
 	} catch (e) {
-		return res.status(500).send({
-			error: `Error while computing compatible vehicles: ${e}`
-		})
+		console.log(`Error while computing compatible vehicles: ${e}`);
+		// return res.status(500).send({
+		// 	error: `Error while computing compatible vehicles: ${e}`
+		// })
 	}
 	findCompatiblesProcessRunning = false;
 }

@@ -12,7 +12,9 @@ export interface RMVehicle {
 	type: string,
 	year: string,
 	make: string,
-	model: string
+	model: string,
+	makeHashCache?: string;
+	modelHashCache?: string;
 }
 
 

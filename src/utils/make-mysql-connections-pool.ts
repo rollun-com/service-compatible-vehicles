@@ -22,7 +22,7 @@ const makeMySQLConnectionsPool = (options: MySQLOptions = {}) => {
     });
     return {
         _pool: pool,
-        async query(queryString: string, args?: Array<string | number>) {
+        async query<T = any>(queryString: string, args?: Array<string | number>): Promise<Array<T> | T | null>  {
             return new Promise((resolve, reject) => {
                 const cb = (err, result) => err ? reject(err) : resolve(result);
                 args

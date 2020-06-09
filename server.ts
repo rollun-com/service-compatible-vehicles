@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
 import vehiclesCompatiblesRouter from "./src/api/vehicles-compatibles";
 // import { tracer, traceMiddleware } from "./src/tracer";
 import { RequestWithAddons }     from "./src/utils/types";
-
+import DocsRouter                from './src/api/swagger';
 // global logger instance.
 export const globalLogger = new LogClient({
 	index_name: process.env.ELS_INDEX_NAME,
@@ -67,6 +67,7 @@ app.use((req: RequestWithAddons, res, next) => {
  */
 
 app.get('/ping', handlePing);
+app.use(DocsRouter);
 app.use(vehiclesCompatiblesRouter);
 
 // 500 handler
@@ -76,6 +77,6 @@ app.use(notFoundMiddleware);
 
 const server = app.listen(PORT, () => {
 	const address = server.address();
-	globalLogger.notice('healthchecker service started!');
-	console.log('healthchecker app started. ', address);
+	globalLogger.notice(process.env.SERVICE_NAME + ' service started!');
+	console.log(process.env.SERVICE_NAME + ' service started. ', address);
 });

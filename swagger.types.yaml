@@ -12,14 +12,3 @@ definitions:
       ok:
         type: boolean
         example: true
-  Metric:
-    type: "object"
-    properties:
-      value:
-        required: true
-        type: "number"
-        example: 17000.2
-      timestamp:
-        type: "number"
-        description: "If there is no timestamp, current UTC time will be used"
-        example: 1586881668
