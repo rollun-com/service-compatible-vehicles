@@ -6,6 +6,18 @@ definitions:
         type: string
         description: "Compatible EPID"
         example: "10034958807"
+      make:
+        type: string
+        description: "Ebay make"
+        example: "Can-Am"
+      model:
+        type: string
+        description: "Ebay model"
+        example: "Defender Max HD10 4x4 XMR DPS"
+      year:
+        type: string
+        description: "Ebay year"
+        example: "2020"
   Error:
     type: "object"
     properties:
