@@ -108,9 +108,8 @@ export function findCompatibles(axios, logger) {
 				if (yearScore + makeScore + modelMatchScore < 7) return false;
 				return modelPercentMatch > 50;
 			})
-			.map(ebayVehicle => ({
-				...ebayVehicle,
-				model: ebayVehicle.model_submodel
+			.map(({make, model_submodel, year, epid}) => ({
+				epid, make, models: model_submodel, year
 			}));
 		logger.debug('find compatible end', {vehicle, compatibles});
 		return compatibles;
