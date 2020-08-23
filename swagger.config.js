@@ -3,11 +3,11 @@ const host = `localhost:${process.env.PORT || 80}`;
 const swaggerDefinition = {
   info: {
     // API informations (required)
-    title: 'Health checker', // Title (required)
+    title: 'Compatible vehicles', // Title (required)
     version: '1.0.0', // Version (required)
-    description: 'This service makes sure other services are working correctly. Also it can store metrics data', // Description (optional)
+    description: 'Service find compatible vehicles', // Description (optional)
   },
-  host: 'health-checker', // Host (optional)
+  host: 'comp-vehicles', // Host (optional)
   basePath: '/', // Base path (optional)
   produces: ["application/json",],
   schemes: ['http']

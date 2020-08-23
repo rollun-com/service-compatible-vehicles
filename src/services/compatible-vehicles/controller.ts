@@ -1,8 +1,8 @@
-import { RequestWithAddons }   from "../../utils/types";
-import { Response }            from 'express';
-import { refreshRMVehicles }   from "./refresh-rm-vehicles";
-import { refreshEbayVehicles } from "./refresh-ebay-vehicles";
-import { findCompatibles }     from "./find-compatibles";
+import { RequestWithAddons }                   from "../../utils/types";
+import { Response }                            from 'express';
+import { refreshRMVehicles }                   from "./refresh-rm-vehicles";
+import { refreshEbayVehicles }                 from "./refresh-ebay-vehicles";
+import { findAllCompatibles, findCompatibles } from "./find-compatibles";
 
 let refreshRockyMountainVehiclesProcessRunning = false;
 
@@ -50,7 +50,7 @@ export async function refreshEbayVehiclesController(req: RequestWithAddons, res:
 
 let findCompatiblesProcessRunning = false
 
-export async function findCompatiblesController(req: RequestWithAddons, res: Response) {
+export async function findAllCompatiblesController(req: RequestWithAddons, res: Response) {
 	if (findCompatiblesProcessRunning) {
 		return res.status(500).send({
 			ok: false,
@@ -60,7 +60,7 @@ export async function findCompatiblesController(req: RequestWithAddons, res: Res
 	findCompatiblesProcessRunning = true;
 	res.send({ok: true});
 	try {
-		await findCompatibles(req.axios, req.logger)();
+		await findAllCompatibles(req.axios, req.logger)();
 	} catch (e) {
 		console.log(`Error while computing compatible vehicles: ${e}`);
 		// return res.status(500).send({
@@ -68,4 +68,25 @@ export async function findCompatiblesController(req: RequestWithAddons, res: Res
 		// })
 	}
 	findCompatiblesProcessRunning = false;
+}
+
+export async function findCompatiblesController(req: RequestWithAddons, res: Response) {
+
+	const makeInvalidParamsError = (text: string) => res.status(400).send({error: text})
+
+
+	try {
+		const {make, model, year} = req.query;
+		if (!make) return makeInvalidParamsError('`make` is required');
+		if (!model) return makeInvalidParamsError('`model` is required');
+		if (!year) return makeInvalidParamsError('`year` is required');
+		if (isNaN(+year) || +year < 0 || +year > 99999) return ('`year` must be a valid year e.g. - 2001')
+		res.send(await findCompatibles(req.axios, req.logger)({make, model, year}));
+	} catch (e) {
+		req.logger.error(`Error while fining compatible`,);
+		console.log(`Error while computing compatible vehicles: ${e}`);
+		return res.status(500).send({
+			error: `Error while computing compatible vehicles: ${e}`
+		})
+	}
 }

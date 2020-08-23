@@ -1,9 +1,10 @@
 import { Router } from "express";
 import {
+	findAllCompatiblesController,
 	findCompatiblesController,
 	refreshEbayVehiclesController,
 	refreshRockyMountainVehiclesController
-}                 from "../services/compatible-vehicles/controller";
+} from "../services/compatible-vehicles/controller";
 
 const router = Router();
 
@@ -40,11 +41,11 @@ router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
 
 /**
  * @swagger
- * /api/v1/FindCompatibles:
+ * /api/v1/FindAllCompatibles:
  *   post:
  *     tags:
  *       - "/api/v1"
- *     description: Compute compatibles between ebay and Rocky Mountain vehicles.
+ *     description: Compute compatibles between all ebay vehicles and all Rocky Mountain vehicles. POST - because webhooks can send only POST
  *     responses:
  *       200:
  *         description: OK
@@ -52,6 +53,42 @@ router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
  *           $ref: "#/definitions/OKResponse"
  */
 
-router.post('/api/v1/FindCompatibles', findCompatiblesController);
+router.post('/api/v1/FindAllCompatibles', findAllCompatiblesController);
+
+/**
+ * @swagger
+ * /api/v1/FindCompatibles:
+ *   get:
+ *     tags:
+ *       - "/api/v1"
+ *     description: Finds compatible vehicles in ebay by passed vehicle
+ *     parameters:
+ *       - in: query
+ *         name: make
+ *         schema:
+ *           type: string
+ *           example: honda
+ *       - in: query
+ *         name: model
+ *         schema:
+ *           type: string
+ *           example: NC700X
+ *       - in: query
+ *         name: year
+ *         schema:
+ *           type: number
+ *           example: 2017
+ *     responses:
+ *       200:
+ *         description: OK
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: "#/definitions/Compatible"
+ */
+
+
+router.get('/api/v1/FindCompatibles', findCompatiblesController);
+
 
 export default router;

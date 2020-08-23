@@ -1,4 +1,11 @@
 definitions:
+  Compatible:
+    type: "object"
+    properties:
+      epid:
+        type: string
+        description: "Compatible EPID"
+        example: "10034958807"
   Error:
     type: "object"
     properties:

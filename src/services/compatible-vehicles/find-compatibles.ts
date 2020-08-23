@@ -37,9 +37,10 @@ namespace HashMaker {
 }
 
 const compareStrategies = {
+	// model match gives 4 points
 	compareModel: {
 		comparator: (rmModel: Array<string>, ebayModel: Array<string>): {modelMatchScore: number, modelPercentMatch: number} => {
-			const maxHashLength = Math.max(ebayModel.join('').length, rmModel.join('').length);
+			const maxHashLength = Math.max(ebayModel.length, rmModel.length);
 
 			const cleanEbayModel = ebayModel.filter(word => rmModel.find(rmWord => word.includes(rmWord) || rmWord.includes(word)));
 			const maxHash = cleanEbayModel.length > rmModel.length ? cleanEbayModel : rmModel;
@@ -63,56 +64,78 @@ const compareStrategies = {
 					}
 					if (match === 100) break;
 				}
-				// if (idx >= 0) {
-				// 	minHash = minHash.filter((_, i) => i !== idx);
-				// }
-				return percent + match / ebayModel.length;
+				return percent + match / maxHashLength;
 			}, 0);
 			return {
-				modelMatchScore: matchPercent > 0 ? 2 : 0,
+				modelMatchScore: matchPercent > 0 ? 4 : 0,
 				modelPercentMatch: matchPercent
 			}
 		}
 	},
+	// make match gives 2 points
 	compareMake: {
 		comparator: (rmMake, ebayMake, makesAliasesCache) => {
 			const makeAlias = makesAliasesCache.find(el => el.ebay_brand_id === ebayMake && el.rm_brand_id === rmMake);
-			return (makeAlias || (ebayMake === rmMake)) ? 4 : 0;
+			return (makeAlias || (ebayMake === rmMake)) ? 2 : 0;
 		}
 	},
+	// year match gives 1 point
 	compareYear: {
 		comparator: (rmYear, ebayYear) => {
+			// return Math.abs(ebayYear - rmYear) < 3 ? 1 : 0;
 			return ebayYear === rmYear ? 1 : 0;
 		}
 	}
 };
 
 export function findCompatibles(axios, logger) {
+	return async (vehicle: {make: string, model: string, year: string}): Promise<Array<{epid: string}>> => {
+		logger.debug('find compatible start', {vehicle});
+		const ebayVehicles = await mysql.query(`select epid,
+                                                   make,
+                                                   model_submodel,
+                                                   year
+                                            from ebay_vehicles`) as Array<{epid: string, make: string, model_submodel: string, year: string}>;
+		const makesAliasesCache = await mysql.query(`select *
+                                                 from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
+		const vehicleMakeHash = HashMaker.rmMake(vehicle.make);
+		const vehicleModelHash = HashMaker.model(vehicle.model);
+		const compatibles = ebayVehicles
+			.filter(ebayVehicle => {
+				const yearScore = compareStrategies.compareYear.comparator(vehicle.year, ebayVehicle.year);
+				const makeScore = compareStrategies.compareMake.comparator(vehicleMakeHash, HashMaker.ebayMake(ebayVehicle.make), makesAliasesCache);
+				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(vehicleModelHash, HashMaker.model(ebayVehicle.model_submodel));
+				if (yearScore + makeScore + modelMatchScore < 7) return false;
+				return modelPercentMatch > 50;
+			})
+			.map(({epid}) => ({epid}));
+		logger.debug('find compatible end', {vehicle, compatibles});
+		return compatibles;
+	};
+}
+
+// TODO refactor
+
+export function findAllCompatibles(axios, logger) {
 	return async () => {
-		let count = 0;
-		let offset = 0;
 		await mysql.query(`truncate compatible_vehicles`);
 		const rmVehiclesCache = await mysql.query(`select *
-                                                   from rm_vehicles`) as Array<RMVehicle>;
+                                               from rm_vehicles`) as Array<RMVehicle>;
 		const makesAliasesCache = await mysql.query(`select *
-                                                     from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
-		while (true) {
-			const [ebayVehicle] = await mysql.query(`select *
-                                                     from ebay_vehicles
-                                                     limit 1 offset ?`, [offset]) as Array<EbayVehicle>;
-			console.log(`Trying to match ${offset + 1} ebay item`);
-			if (!ebayVehicle) break;
+                                                 from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
+		const ebayVehiclesCache = await mysql.query(`select *
+                                                 from ebay_vehicles`) as Array<EbayVehicle>;
+		for (let i = 0; i < ebayVehiclesCache.length; i++) {
+			const ebayVehicle = ebayVehiclesCache[i];
+			console.log(`Trying to match ${i + 1} ebay item`);
 			let matchScore = 0;
 			let model_match_percent = 0;
 			let compatibleVehicleIdx = -1;
-			let hashes = {
-				ebay: '-',
-				rm: '-'
-			};
+			let hashes = {ebay: '-', rm: '-'};
 			const ebayMakeHash = HashMaker.ebayMake(ebayVehicle.make);
-			// const ebayModelHash = HashMaker.ebayModel(ebayVehicle.model_submodel);
 			const ebayModelHash = HashMaker.model(ebayVehicle.model_submodel);
-			rmVehiclesCache.forEach((rmVehicle, idx) => {
+			for (let idx = 0; idx < rmVehiclesCache.length; idx++) {
+				const rmVehicle = rmVehiclesCache[idx];
 				// year
 				const yearScore = compareStrategies.compareYear.comparator(rmVehicle.year, ebayVehicle.year);
 				// make
@@ -122,6 +145,7 @@ export function findCompatibles(axios, logger) {
 				const rmModelHash = rmVehicle.modelHashCache || (rmVehicle.modelHashCache = HashMaker.model(rmVehicle.model));
 				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(rmModelHash, ebayModelHash);
 				// check comparing results
+
 				let currentMatchScore = makeScore + modelMatchScore + yearScore;
 				if (currentMatchScore > matchScore) {
 					// reset modal_match_percent if  modalScore goes up.
@@ -136,19 +160,19 @@ export function findCompatibles(axios, logger) {
 					hashes.ebay = `${ebayMakeHash}|${ebayModelHash}|${ebayVehicle.year}`;
 					hashes.rm = `${rmMakeHash}|${rmModelHash}|${rmVehicle.year}`;
 				}
-			})
+			}
 			if (compatibleVehicleIdx > -1) {
 				const compatibleVehicle = rmVehiclesCache[compatibleVehicleIdx];
 				const [vehicle] = await mysql.query(`select *
-                                                     from compatible_vehicles
-                                                     where epid = ?`, [ebayVehicle.epid]) as Array<{match_score: number}>;
+                                             from compatible_vehicles
+                                             where epid = ?`, [ebayVehicle.epid]) as Array<{match_score: number}>;
 				if (!vehicle || (matchScore > +vehicle.match_score)) {
 					await mysql.query(`
-                        insert into compatible_vehicles
-                        values (?, ?, ?, ?, ?, ?)
-                        on duplicate key update rm_vehicle_id       = ?,
-                                                match_score         = ?,
-                                                model_match_percent = ?`, [
+              insert into compatible_vehicles
+              values (?, ?, ?, ?, ?, ?)
+              on duplicate key update rm_vehicle_id       = ?,
+                                      match_score         = ?,
+                                      model_match_percent = ?`, [
 						ebayVehicle.epid, compatibleVehicle.id, matchScore, hashes.ebay, hashes.rm, model_match_percent.toFixed(2),
 						compatibleVehicle.id, matchScore, model_match_percent.toFixed(2)
 					]);
@@ -156,10 +180,9 @@ export function findCompatibles(axios, logger) {
 			}
 			model_match_percent = 0;
 			matchScore = 0;
-			offset += 1;
 		}
 		console.log('done');
-		return count;
+		return ebayVehiclesCache.length;
 	}
 }
 
