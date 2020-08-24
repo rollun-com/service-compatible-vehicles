@@ -1,8 +1,8 @@
 import { RequestWithAddons }                   from "../../utils/types";
 import { Response }                            from 'express';
 import { refreshRMVehicles }                   from "./refresh-rm-vehicles";
-import { refreshEbayVehicles }                 from "./refresh-ebay-vehicles";
-import { findAllCompatibles, findCompatibles } from "./find-compatibles";
+import { refreshEbayVehicles }                                         from "./refresh-ebay-vehicles";
+import { findAllCompatibles, findCompatibles, resetEbayVehiclesCache } from "./find-compatibles";
 
 let refreshRockyMountainVehiclesProcessRunning = false;
 
@@ -39,6 +39,7 @@ export async function refreshEbayVehiclesController(req: RequestWithAddons, res:
 	res.send({ok: true});
 	try {
 		await refreshEbayVehicles(req.axios, req.logger)();
+		resetEbayVehiclesCache();
 	} catch (e) {
 		console.log(`Error while refreshing Ebay vehicles: ${e}`);
 		// return res.status(500).send({
@@ -70,10 +71,33 @@ export async function findAllCompatiblesController(req: RequestWithAddons, res: 
 	findCompatiblesProcessRunning = false;
 }
 
+export async function findCompatiblesBulkController(req: RequestWithAddons, res: Response) {
+	const makeInvalidParamsError = (text: string) => {res.status(400).send({error: text}); return true};
+
+	try {
+		const vehicles = req.body;
+		const isValid = !vehicles.find(({make, model, year}, idx) => {
+			if (!make) return makeInvalidParamsError(`#${idx} 'make' is required`);
+			if (!model) return makeInvalidParamsError(`#${idx} 'model' is required`);
+			if (!year) return makeInvalidParamsError(`'#${idx} 'year' is required`);
+			if (isNaN(+year) || +year < 0 || +year > 99999) return (`#${idx} 'year' must be a valid year e.g. - 2001`)
+			return false;
+		})
+		if (!isValid) return;
+		const result: Array<Array<{epid: string, make: string, model: string, year: string}>> = await Promise.all(vehicles.map(({make, model, year}) => findCompatibles(req.axios, req.logger)({make, model, year})))
+		res.send(result.reduce((acc, item) => acc.concat(item), []));
+	} catch (e) {
+		req.logger.error(`Error while fining compatible`,);
+		console.log(`Error while computing compatible vehicles: ${e}`);
+		return res.status(500).send({
+			error: `Error while computing compatible vehicles: ${e}`
+		})
+	}
+}
+
 export async function findCompatiblesController(req: RequestWithAddons, res: Response) {
 
 	const makeInvalidParamsError = (text: string) => res.status(400).send({error: text})
-
 
 	try {
 		const {make, model, year} = req.query;

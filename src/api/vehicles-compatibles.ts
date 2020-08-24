@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-	findAllCompatiblesController,
+	findAllCompatiblesController, findCompatiblesBulkController,
 	findCompatiblesController,
 	refreshEbayVehiclesController,
 	refreshRockyMountainVehiclesController
@@ -39,21 +39,21 @@ router.post('/api/v1/RefreshRockyMountainVehicles', refreshRockyMountainVehicles
 
 router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
 
-/**
- * @swagger
- * /api/v1/FindAllCompatibles:
- *   post:
- *     tags:
- *       - "/api/v1"
- *     description: Compute compatibles between all ebay vehicles and all Rocky Mountain vehicles. POST - because webhooks can send only POST
- *     responses:
- *       200:
- *         description: OK
- *         schema:
- *           $ref: "#/definitions/OKResponse"
- */
-
-router.post('/api/v1/FindAllCompatibles', findAllCompatiblesController);
+// /**
+//  * @swagger
+//  * /api/v1/FindAllCompatibles:
+//  *   post:
+//  *     tags:
+//  *       - "/api/v1"
+//  *     description: Compute compatibles between all ebay vehicles and all Rocky Mountain vehicles. POST - because webhooks can send only POST
+//  *     responses:
+//  *       200:
+//  *         description: OK
+//  *         schema:
+//  *           $ref: "#/definitions/OKResponse"
+//  */
+//
+// router.post('/api/v1/FindAllCompatibles', findAllCompatiblesController);
 
 /**
  * @swagger
@@ -61,7 +61,7 @@ router.post('/api/v1/FindAllCompatibles', findAllCompatiblesController);
  *   get:
  *     tags:
  *       - "/api/v1"
- *     description: Finds compatible vehicles in ebay by passed vehicle
+ *     description: Finds compatible vehicles in ebay for passed vehicle
  *     parameters:
  *       - in: query
  *         name: make
@@ -85,10 +85,36 @@ router.post('/api/v1/FindAllCompatibles', findAllCompatiblesController);
  *           type: array
  *           items:
  *             $ref: "#/definitions/Compatible"
+ *       400:
+ *         description: Validation error
+ *         schema:
+ *           $ref: "#/definitions/Error"
+ *   post:
+ *     tags:
+ *       - "/api/v1"
+ *     description: Bulk variant for GET /api/v1/FindCompatibles. Converts passed array of vehicles to compatible ebay vehicles
+ *     parameters:
+ *       -  in: body
+ *          name: body
+ *          schema:
+ *            type: array
+ *            items:
+ *              $ref: "#/definitions/Vehicle"
+ *     responses:
+ *       200:
+ *         description: OK
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: "#/definitions/Compatible"
+ *       400:
+ *         description: Validation error
+ *         schema:
+ *           $ref: "#/definitions/Error"
  */
 
-
 router.get('/api/v1/FindCompatibles', findCompatiblesController);
+router.post('/api/v1/FindCompatibles', findCompatiblesBulkController);
 
 
 export default router;

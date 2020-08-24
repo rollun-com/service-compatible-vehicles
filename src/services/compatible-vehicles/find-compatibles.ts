@@ -88,16 +88,47 @@ const compareStrategies = {
 	}
 };
 
+const cache = {
+	_caches: {},
+	setCache(name: string, cache: any) {
+		this._caches[name] = cache;
+	},
+	getCache(name: string): any | null {
+		if (this._caches[name] !== undefined) return this._caches[name];
+		return null;
+	},
+	cacheExists(name: string): boolean {
+		return this._caches[name] !== undefined;
+	},
+	deleteCache(name: string) {
+		this._caches[name] = undefined;
+	},
+	deleteAllCaches() {
+		this._caches = {};
+	}
+}
+
+export function resetEbayVehiclesCache() {
+	cache.deleteCache('ebayVehicles');
+}
+
 export function findCompatibles(axios, logger) {
-	return async (vehicle: {make: string, model: string, year: string}): Promise<Array<{epid: string}>> => {
+	return async (vehicle: {make: string, model: string, year: string}): Promise<Array<{epid: string, make: string, model: string, year: string}>> => {
 		logger.debug('find compatible start', {vehicle});
-		const ebayVehicles = await mysql.query(`select epid,
-                                                   make,
-                                                   model_submodel,
-                                                   year
-                                            from ebay_vehicles`) as Array<{epid: string, make: string, model_submodel: string, year: string}>;
-		const makesAliasesCache = await mysql.query(`select *
-                                                 from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
+		let ebayVehicles: Array<{epid: string, make: string, model_submodel: string, year: string}>;
+		if (cache.cacheExists('ebayVehicles')) {
+			ebayVehicles = cache.getCache('ebayVehicles');
+		} else {
+			ebayVehicles = await mysql.query(`select epid,
+                                               make,
+                                               model_submodel,
+                                               year
+                                        from ebay_vehicles`) as Array<{epid: string, make: string, model_submodel: string, year: string}>;
+			cache.setCache('ebayVehicles', ebayVehicles);
+		}
+		let makesAliasesCache: Array<{ebay_brand_id: string; rm_brand_id: string}>;
+		makesAliasesCache = await mysql.query(`select *
+                                           from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
 		const vehicleMakeHash = HashMaker.rmMake(vehicle.make);
 		const vehicleModelHash = HashMaker.model(vehicle.model);
 		const compatibles = ebayVehicles
@@ -109,7 +140,7 @@ export function findCompatibles(axios, logger) {
 				return modelPercentMatch > 50;
 			})
 			.map(({make, model_submodel, year, epid}) => ({
-				epid, make, models: model_submodel, year
+				epid, make, model: model_submodel, year
 			}));
 		logger.debug('find compatible end', {vehicle, compatibles});
 		return compatibles;

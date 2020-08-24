@@ -1,4 +1,19 @@
 definitions:
+  Vehicle:
+    type: "object"
+    properties:
+      make:
+        type: string
+        description: "make"
+        example: "honda"
+      model:
+        type: string
+        description: "model"
+        example: "NC700X"
+      year:
+        type: string
+        description: "year"
+        example: "2017"
   Compatible:
     type: "object"
     properties:
