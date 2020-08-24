@@ -7,7 +7,7 @@ const swaggerDefinition = {
     version: '1.0.0', // Version (required)
     description: 'Service find compatible vehicles', // Description (optional)
   },
-  host: host || 'comp-vehicles', // Host (optional)
+  host: process.env.NODE_ENV === 'production' ? 'comp-vehicles' : host, // Host (optional)
   basePath: '/', // Base path (optional)
   produces: ["application/json",],
   schemes: ['http']
