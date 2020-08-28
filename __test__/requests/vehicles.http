@@ -1,0 +1,31 @@
+
+###
+POST http://localhost:9005/api/v1/RefreshEbayVehicles
+
+###
+POST http://localhost:9005/api/v1/FindCompatibles
+Content-Type: application/json
+
+[
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF250R"
+  }
+]
+

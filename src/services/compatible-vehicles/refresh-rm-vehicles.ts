@@ -50,7 +50,6 @@ async function updateVehicles(vehicles: Array<RMVehicle>) {
 		if (res.length > 0) {
 			return console.log(`Vehicle with id ${id} exists!`);
 		}
-		console.log(JSON.stringify(vehicle));
 		await mysql.query(`
             insert into rm_vehicles
             values (?, ?, ?, ?, ?)
@@ -138,7 +137,6 @@ export function refreshRMVehicles(axios, logger) {
 		}
 		return result;
 	}
-
 }
 
 

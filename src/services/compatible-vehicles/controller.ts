@@ -1,6 +1,6 @@
-import { RequestWithAddons }                   from "../../utils/types";
-import { Response }                            from 'express';
-import { refreshRMVehicles }                   from "./refresh-rm-vehicles";
+import { RequestWithAddons }                                           from "../../utils/types";
+import { Response }                                                    from 'express';
+import { refreshRMVehicles }                                           from "./refresh-rm-vehicles";
 import { refreshEbayVehicles }                                         from "./refresh-ebay-vehicles";
 import { findAllCompatibles, findCompatibles, resetEbayVehiclesCache } from "./find-compatibles";
 
@@ -72,10 +72,14 @@ export async function findAllCompatiblesController(req: RequestWithAddons, res: 
 }
 
 export async function findCompatiblesBulkController(req: RequestWithAddons, res: Response) {
-	const makeInvalidParamsError = (text: string) => {res.status(400).send({error: text}); return true};
+	const makeInvalidParamsError = (text: string) => {
+		res.status(400).send({error: text});
+		return true
+	};
 
 	try {
 		const vehicles = req.body;
+		if (!Array.isArray(vehicles)) return makeInvalidParamsError(`body must be an array of vehicles.`);
 		const isValid = !vehicles.find(({make, model, year}, idx) => {
 			if (!make) return makeInvalidParamsError(`#${idx} 'make' is required`);
 			if (!model) return makeInvalidParamsError(`#${idx} 'model' is required`);
@@ -84,8 +88,18 @@ export async function findCompatiblesBulkController(req: RequestWithAddons, res:
 			return false;
 		})
 		if (!isValid) return;
-		const result: Array<Array<{epid: string, make: string, model: string, year: string}>> = await Promise.all(vehicles.map(({make, model, year}) => findCompatibles(req.axios, req.logger)({make, model, year})))
-		res.send(result.reduce((acc, item) => acc.concat(item), []));
+		let result = [];
+		for (const {make, model , year} of vehicles) {
+			result = result
+				.concat(await findCompatibles(req.axios, req.logger)({
+				make,
+				model,
+				year
+			}))
+				.filter(({epid}) => !result.find(({epid: _epid}) => _epid === epid));
+		}
+		// const result: Array<Array<{epid: string, make: string, model: string, year: string}>> = await Promise.all(vehicles.map(({make, model, year}) => ))
+		res.send(result);
 	} catch (e) {
 		req.logger.error(`Error while fining compatible`,);
 		console.log(`Error while computing compatible vehicles: ${e}`);

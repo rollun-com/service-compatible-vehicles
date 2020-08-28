@@ -1,11 +1,9 @@
-import { mysql }       from "../../../server";
-import { RMVehicle }   from "./refresh-rm-vehicles";
-import { EbayVehicle } from "./refresh-ebay-vehicles";
-import { Hash }        from "crypto";
+import { mysql }     from "../../../server";
+import { RMVehicle } from "./refresh-rm-vehicles";
 
 const strcmp = (str1, str2) => ((str1 == str2) ? 0 : ((str1 > str2) ? 1 : -1))
 
-namespace HashMaker {
+export namespace HashMaker {
 	export const rmMake = (make: string) => {
 		return make
 			.replace(/\s+/g, '')
@@ -82,18 +80,48 @@ const compareStrategies = {
 	// year match gives 1 point
 	compareYear: {
 		comparator: (rmYear, ebayYear) => {
-			// return Math.abs(ebayYear - rmYear) < 3 ? 1 : 0;
-			return ebayYear === rmYear ? 1 : 0;
+			return Math.abs(ebayYear - rmYear) <= 3 ? 1 : 0;
 		}
 	}
 };
 
 const cache = {
 	_caches: {},
+
+	async getEbayVehicles() {
+		const cacheName = 'ebayVehicles';
+		if (this.cacheExists(cacheName)) {
+			console.log('Ebay from cache');
+			return this.getCache(cacheName);
+		}
+		const ebayVehicles = await mysql.query(`select epid,
+                                                   make,
+                                                   model_submodel,
+                                                   year,
+                                                   hashes
+                                            from ebay_vehicles`) as Array<EbayVehicle>;
+		console.log('Ebay fetched');
+		return this.setCache('ebayVehicles', ebayVehicles);
+	},
+
+	async getMakesAliases() {
+		const cacheName = 'makesAliases';
+		if (this.cacheExists(cacheName)) {
+			console.log('makes aliases from cache')
+			return this.getCache(cacheName);
+		}
+		const makesAliases = await mysql.query(`select *
+                                            from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
+
+		console.log('makes aliases fetched');
+		return this.setCache('makesAliases', makesAliases)
+	},
+
 	setCache(name: string, cache: any) {
-		this._caches[name] = cache;
+		return this._caches[name] = cache
 	},
 	getCache(name: string): any | null {
+		console.log('get cache', name);
 		if (this._caches[name] !== undefined) return this._caches[name];
 		return null;
 	},
@@ -112,30 +140,31 @@ export function resetEbayVehiclesCache() {
 	cache.deleteCache('ebayVehicles');
 }
 
+export type EbayVehicle = {
+	epid: string;
+	make: string;
+	model_submodel: string;
+	year: string;
+	hashes: {
+		make: string;
+		model: Array<string>;
+		year: string;
+	}
+}
+
 export function findCompatibles(axios, logger) {
 	return async (vehicle: {make: string, model: string, year: string}): Promise<Array<{epid: string, make: string, model: string, year: string}>> => {
 		logger.debug('find compatible start', {vehicle});
-		let ebayVehicles: Array<{epid: string, make: string, model_submodel: string, year: string}>;
-		if (cache.cacheExists('ebayVehicles')) {
-			ebayVehicles = cache.getCache('ebayVehicles');
-		} else {
-			ebayVehicles = await mysql.query(`select epid,
-                                               make,
-                                               model_submodel,
-                                               year
-                                        from ebay_vehicles`) as Array<{epid: string, make: string, model_submodel: string, year: string}>;
-			cache.setCache('ebayVehicles', ebayVehicles);
-		}
-		let makesAliasesCache: Array<{ebay_brand_id: string; rm_brand_id: string}>;
-		makesAliasesCache = await mysql.query(`select *
-                                           from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
+		const ebayVehicles = await cache.getEbayVehicles() as Array<EbayVehicle>;
+		const makesAliases = await cache.getMakesAliases() as Array<{ebay_brand_id: string; rm_brand_id: string}>;
+
 		const vehicleMakeHash = HashMaker.rmMake(vehicle.make);
 		const vehicleModelHash = HashMaker.model(vehicle.model);
 		const compatibles = ebayVehicles
-			.filter(ebayVehicle => {
-				const yearScore = compareStrategies.compareYear.comparator(vehicle.year, ebayVehicle.year);
-				const makeScore = compareStrategies.compareMake.comparator(vehicleMakeHash, HashMaker.ebayMake(ebayVehicle.make), makesAliasesCache);
-				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(vehicleModelHash, HashMaker.model(ebayVehicle.model_submodel));
+			.filter(({hashes: {make, model, year}}) => {
+				const yearScore = compareStrategies.compareYear.comparator(vehicle.year, year);
+				const makeScore = compareStrategies.compareMake.comparator(vehicleMakeHash, make, makesAliases);
+				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(vehicleModelHash, model);
 				if (yearScore + makeScore + modelMatchScore < 7) return false;
 				return modelPercentMatch > 50;
 			})
