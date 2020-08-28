@@ -80,7 +80,7 @@ const compareStrategies = {
 	// year match gives 1 point
 	compareYear: {
 		comparator: (rmYear, ebayYear) => {
-			return Math.abs(ebayYear - rmYear) <= 3 ? 1 : 0;
+			return +rmYear <= +ebayYear ? 1 : 0;
 		}
 	}
 };
