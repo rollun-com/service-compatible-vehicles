@@ -45,13 +45,7 @@ export const injectLifecycleToken = () => {
 				'parent_lifecycle_token': ParentLCToken
 			}
 		});
-		req.logger = new LogClient({
-			index_name: process.env.ELS_INDEX_NAME,
-			host: process.env.LOGSTASH_HOST,
-			port: +process.env.LOGSTASH_PORT,
-			lifecycle_token: LCToken,
-			parent_lifecycle_token: ParentLCToken
-		})
+		req.logger = globalLogger;
 		next();
 	}
 };
