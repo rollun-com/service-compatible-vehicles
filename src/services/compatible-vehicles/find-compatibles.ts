@@ -164,7 +164,6 @@ export type EbayVehicle = {
 
 export function findCompatibles(axios, logger) {
 	return async (vehicle: {make: string, model: string, year: string}): Promise<Array<{epid: string, make: string, model: string, year: string}>> => {
-		logger.debug('find compatible start', {vehicle});
 		const ebayVehicles = await cache.getEbayVehicles() as Array<EbayVehicle>;
 		const makesAliases = await cache.getMakesAliases() as Array<{ebay_brand_id: string; rm_brand_id: string}>;
 
@@ -184,7 +183,6 @@ export function findCompatibles(axios, logger) {
 			.map(({make, model_submodel, year, epid}) => ({
 				epid, make, model: model_submodel, year
 			}));
-		logger.debug('find compatible end', {vehicle, compatibles});
 		return compatibles;
 	};
 }

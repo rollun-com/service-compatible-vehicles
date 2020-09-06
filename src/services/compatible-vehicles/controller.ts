@@ -103,7 +103,7 @@ export async function findCompatiblesBulkController(req: RequestWithAddons, res:
 		// const result: Array<Array<{epid: string, make: string, model: string, year: string}>> = await Promise.all(vehicles.map(({make, model, year}) => ))
 		res.send(result);
 	} catch (e) {
-		req.logger.error(`Error while fining compatible`,);
+		req.logger.error(`Error while fining compatible`, {body: req.body});
 		console.log(`Error while computing compatible vehicles: ${e}`);
 		return res.status(500).send({
 			error: `Error while computing compatible vehicles: ${e}`
@@ -123,7 +123,7 @@ export async function findCompatiblesController(req: RequestWithAddons, res: Res
 		if (isNaN(+year) || +year < 0 || +year > 99999) return ('`year` must be a valid year e.g. - 2001')
 		res.send(await findCompatibles(req.axios, req.logger)({make, model, year}));
 	} catch (e) {
-		req.logger.error(`Error while fining compatible`,);
+		req.logger.error(`Error while fining compatible`, req.query);
 		console.log(`Error while computing compatible vehicles: ${e}`);
 		return res.status(500).send({
 			error: `Error while computing compatible vehicles: ${e}`
