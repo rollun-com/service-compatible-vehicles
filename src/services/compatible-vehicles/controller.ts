@@ -89,14 +89,16 @@ export async function findCompatiblesBulkController(req: RequestWithAddons, res:
 		})
 		if (!isValid) return;
 		let result = [];
-		for (const {make, model , year} of vehicles) {
+		for (const {make, model, year} of vehicles) {
 			result = result
-				.concat(await findCompatibles(req.axios, req.logger)({
-				make,
-				model,
-				year
-			}))
-				.filter(({epid}) => !result.find(({epid: _epid}) => _epid === epid));
+				.concat((await findCompatibles(req.axios, req.logger)({
+						make,
+						model,
+						year
+					}))
+						.filter(({epid}) => !result.find(({epid: _epid}) => _epid === epid))
+				)
+			// remove same epids
 		}
 		// const result: Array<Array<{epid: string, make: string, model: string, year: string}>> = await Promise.all(vehicles.map(({make, model, year}) => ))
 		res.send(result);

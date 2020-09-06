@@ -8,24 +8,19 @@ Content-Type: application/json
 
 [
   {
-    "make": "HONDA",
-    "year": 2006,
-    "model": "CRF250R"
+    "make": "Yamaha",
+    "year": 2014,
+    "model": "WR 450 F"
   },
   {
-    "make": "HONDA",
-    "year": 2007,
-    "model": "CRF250R"
+    "make": "Yamaha",
+    "year": 2012,
+    "model": "WR 250 F"
   },
   {
-    "make": "HONDA",
-    "year": 2008,
-    "model": "CRF250R"
-  },
-  {
-    "make": "HONDA",
-    "year": 2009,
-    "model": "CRF250R"
+    "make": "Yamaha",
+    "year": 2010,
+    "model": "WR 250 F"
   }
 ]
 

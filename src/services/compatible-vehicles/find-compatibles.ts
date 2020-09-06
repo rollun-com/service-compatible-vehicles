@@ -34,20 +34,35 @@ export namespace HashMaker {
 	}
 }
 
+type CompareModel = {raw: string, hashes: Array<string>};
+
 const compareStrategies = {
 	// model match gives 4 points
 	compareModel: {
-		comparator: (rmModel: Array<string>, ebayModel: Array<string>): {modelMatchScore: number, modelPercentMatch: number} => {
-			const maxHashLength = Math.max(ebayModel.length, rmModel.length);
+		comparator: (model: CompareModel, ebayModel: CompareModel): {modelMatchScore: number, modelPercentMatch: number} => {
+			// check full models strings for match
+			const _model = HashMaker.ebayMake(model.raw);
+			const _ebayModel = HashMaker.ebayMake(ebayModel.raw);
+			if (
+				_model.length > 0 && _ebayModel.length > 0 &&
+				(_model.includes(_ebayModel) || _ebayModel.includes(_model)) &&
+				(Math.min(model.raw.length, ebayModel.raw.length) / Math.max(model.raw.length, ebayModel.raw.length) * 100)
+			) {
+				return {
+					modelMatchScore: 4,
+					modelPercentMatch: (Math.min(model.raw.length, ebayModel.raw.length) / Math.max(model.raw.length, ebayModel.raw.length) * 100)
+				}
+			}
 
-			const cleanEbayModel = ebayModel.filter(word => rmModel.find(rmWord => word.includes(rmWord) || rmWord.includes(word)));
-			const maxHash = cleanEbayModel.length > rmModel.length ? cleanEbayModel : rmModel;
-			let minHash = cleanEbayModel.length > rmModel.length ? rmModel : cleanEbayModel;
-			// const maxHashString = maxHash.join('');
-			// const minHashString = minHash.join('');
+			// if no match, check word by word
 
-			// const isMatch = minHashString ? maxHashString.includes(minHashString) : false;
-			// const isMatch = !!maxHash.some(word => minHash.find(w => w.includes(word) || word.includes(w)));
+			const maxHashLength = Math.max(ebayModel.hashes.length, model.hashes.length);
+
+			const cleanEbayModel = ebayModel.hashes.filter(word => model.hashes.find(rmWord => word.includes(rmWord) || rmWord.includes(word)));
+			const maxHash = cleanEbayModel.length > model.hashes.length ? cleanEbayModel : model.hashes;
+			let minHash = cleanEbayModel.length > model.hashes.length ? model.hashes : cleanEbayModel;
+
+			// if no match, check word by word
 			const matchPercent = maxHash.reduce((percent, word) => {
 				// const similarWord = '';
 				let match = 0;
@@ -91,7 +106,6 @@ const cache = {
 	async getEbayVehicles() {
 		const cacheName = 'ebayVehicles';
 		if (this.cacheExists(cacheName)) {
-			console.log('Ebay from cache');
 			return this.getCache(cacheName);
 		}
 		const ebayVehicles = await mysql.query(`select epid,
@@ -100,20 +114,17 @@ const cache = {
                                                    year,
                                                    hashes
                                             from ebay_vehicles`) as Array<EbayVehicle>;
-		console.log('Ebay fetched');
 		return this.setCache('ebayVehicles', ebayVehicles);
 	},
 
 	async getMakesAliases() {
 		const cacheName = 'makesAliases';
 		if (this.cacheExists(cacheName)) {
-			console.log('makes aliases from cache')
 			return this.getCache(cacheName);
 		}
 		const makesAliases = await mysql.query(`select *
                                             from makes_aliases`) as Array<{ebay_brand_id: string, rm_brand_id: string}>;
 
-		console.log('makes aliases fetched');
 		return this.setCache('makesAliases', makesAliases)
 	},
 
@@ -121,7 +132,6 @@ const cache = {
 		return this._caches[name] = cache
 	},
 	getCache(name: string): any | null {
-		console.log('get cache', name);
 		if (this._caches[name] !== undefined) return this._caches[name];
 		return null;
 	},
@@ -161,10 +171,13 @@ export function findCompatibles(axios, logger) {
 		const vehicleMakeHash = HashMaker.rmMake(vehicle.make);
 		const vehicleModelHash = HashMaker.model(vehicle.model);
 		const compatibles = ebayVehicles
-			.filter(({hashes: {make, model, year}}) => {
+			.filter(({hashes: {make, model, year}, model_submodel}) => {
 				const yearScore = compareStrategies.compareYear.comparator(vehicle.year, year);
 				const makeScore = compareStrategies.compareMake.comparator(vehicleMakeHash, make, makesAliases);
-				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(vehicleModelHash, model);
+				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(
+					{raw: model_submodel, hashes: model},
+					{raw: vehicle.model, hashes: vehicleModelHash}
+				);
 				if (yearScore + makeScore + modelMatchScore < 7) return false;
 				return modelPercentMatch > 50;
 			})
@@ -205,7 +218,10 @@ export function findAllCompatibles(axios, logger) {
 				const makeScore = compareStrategies.compareMake.comparator(rmMakeHash, ebayMakeHash, makesAliasesCache);
 				// model
 				const rmModelHash = rmVehicle.modelHashCache || (rmVehicle.modelHashCache = HashMaker.model(rmVehicle.model));
-				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(rmModelHash, ebayModelHash);
+				const {modelMatchScore, modelPercentMatch} = compareStrategies.compareModel.comparator(
+					{raw: rmVehicle.model, hashes: rmModelHash},
+					{raw: ebayVehicle.model_submodel, hashes: ebayModelHash}
+				);
 				// check comparing results
 
 				let currentMatchScore = makeScore + modelMatchScore + yearScore;
