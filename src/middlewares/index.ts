@@ -12,7 +12,7 @@ import { globalLogger }           from "../../server";
 
 export const errorMiddleware = (err: any, req: RequestWithAddons, res: Response, next: NextFunction) => {
 	console.log('Got global error!');
-	req.logger.error('service-health-checker global error', {
+	globalLogger.error('service-health-checker global error', {
 		url: req.url,
 		method: req.method,
 		query: req.query,
