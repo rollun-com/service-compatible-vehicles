@@ -1,10 +1,10 @@
-import { Router } from "express";
+import { Router } from 'express';
 import {
-	findAllCompatiblesController, findCompatiblesBulkController,
-	findCompatiblesController,
-	refreshEbayVehiclesController,
-	refreshRockyMountainVehiclesController
-} from "../services/compatible-vehicles/controller";
+  findCompatiblesBulkController,
+  findCompatiblesController, findCompatiblesForAllEbayVehiclesController, refreshRockyMountainVehiclesController
+  // refreshEbayVehiclesController,
+  // refreshRockyMountainVehiclesController
+}                 from '../services/compatible-vehicles/controller';
 
 const router = Router();
 
@@ -14,30 +14,34 @@ const router = Router();
  *   post:
  *     tags:
  *       - "/api/v1"
- *     description: Parse Vehicles from Rocky Mountain from scratch
+ *     description: Parse Vehicles from Rocky Mountain from scratch, and save to 'catalog'
  *     responses:
  *       200:
  *         description: OK
  *         schema:
  *           $ref: "#/definitions/OKResponse"
+ *       503:
+ *         description: Process is already running
+ *         schema:
+ *           $ref: "#/definitions/Error"
  */
 
 router.post('/api/v1/RefreshRockyMountainVehicles', refreshRockyMountainVehiclesController);
-/**
- * @swagger
- * /api/v1/RefreshEbayVehicles:
- *   post:
- *     tags:
- *       - "/api/v1"
- *     description: Get vehicles from ebay from scratch. For now vehicles hardcoded as file.
- *     responses:
- *       200:
- *         description: OK
- *         schema:
- *           $ref: "#/definitions/OKResponse"
- */
-
-router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
+// /**
+//  * @swagger
+//  * /api/v1/RefreshEbayVehicles:
+//  *   post:
+//  *     tags:
+//  *       - "/api/v1"
+//  *     description: Get vehicles from ebay from scratch. For now vehicles hardcoded as file.
+//  *     responses:
+//  *       200:
+//  *         description: OK
+//  *         schema:
+//  *           $ref: "#/definitions/OKResponse"
+//  */
+//
+// router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
 
 // /**
 //  * @swagger
@@ -115,6 +119,29 @@ router.post('/api/v1/RefreshEbayVehicles', refreshEbayVehiclesController);
 
 router.get('/api/v1/FindCompatibles', findCompatiblesController);
 router.post('/api/v1/FindCompatibles', findCompatiblesBulkController);
+
+/**
+ * @swagger
+ * /api/v1/FindAllCompatiblesForEbay:
+ *   post:
+ *     tags:
+ *       - "/api/v1"
+ *     description: This method goes through all EbayCompatibleVehicles table, and find match for vehicles from RM and PU
+ *     responses:
+ *       200:
+ *         description: OK
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: "#/definitions/OKResponse"
+ *       400:
+ *         description: Validation error
+ *         schema:
+ *           $ref: "#/definitions/Error"
+ */
+
+
+router.post('/api/v1/FindAllCompatiblesForEbay', findCompatiblesForAllEbayVehiclesController);
 
 
 export default router;

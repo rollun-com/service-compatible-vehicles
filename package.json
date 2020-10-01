@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npx pm2 start --node-args=\"-r esm\" dist/server.js --no-daemon -i 4",
+    "start": "npx pm2 start --node-args=\"-r esm\" dist/server.js --no-daemon",
     "start:dev": "node_modules/.bin/ts-node ./server.ts",
     "build": "node_modules/.bin/tsc"
   },

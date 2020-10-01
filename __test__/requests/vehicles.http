@@ -1,6 +1,12 @@
+###
+
+POST http://localhost:9005/api/v1/FindAllCompatiblesForEbay
 
 ###
 POST http://localhost:9005/api/v1/RefreshEbayVehicles
+
+###
+POST http://localhost:9005/api/v1/RefreshRockyMountainVehicles
 
 ###
 POST http://localhost:9005/api/v1/FindCompatibles
@@ -8,19 +14,5009 @@ Content-Type: application/json
 
 [
   {
-    "make": "Yamaha",
-    "year": 2014,
-    "model": "WR 450 F"
+    "make": "HONDA",
+    "year": 1979,
+    "model": "CR125R"
   },
   {
-    "make": "Yamaha",
+    "make": "HONDA",
+    "year": 1980,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1981,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1982,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1983,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1984,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CR125R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1979,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1980,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1981,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1982,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1983,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1984,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1984,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "CR500R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "CR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "CR80R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CR85R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CR85R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CR85R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CR85R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CR85R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CR85R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CR85R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CR85R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CR85R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CR85R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2011,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
     "year": 2012,
-    "model": "WR 250 F"
+    "model": "CRF100F"
   },
   {
-    "make": "Yamaha",
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF100F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF110F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF125F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF125F BIG WHEEL"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF150F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF150R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF150R EXPERT"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF230F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF230L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF230L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF230M"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF250F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF250F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
     "year": 2010,
-    "model": "WR 250 F"
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2011,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF250RX"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF250RX"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF250X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF450L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF450L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2010,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2011,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF450R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF450R WORKS EDITION"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF450R WORKS EDITION"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "CRF450X"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2011,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "CRF80F"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "XL600V"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "XL600V"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR100R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR250L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1981,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1982,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1984,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "XR250R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "XR400R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1984,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1985,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1986,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1987,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1988,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1989,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR600R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2008,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2009,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2012,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2013,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2014,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2015,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2016,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2017,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2018,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2019,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2020,
+    "model": "XR650L"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2004,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2005,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2006,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2007,
+    "model": "XR650R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1990,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1991,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1992,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1993,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1994,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1995,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1996,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1997,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1998,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 1999,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2000,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2001,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2002,
+    "model": "XR80R"
+  },
+  {
+    "make": "HONDA",
+    "year": 2003,
+    "model": "XR80R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1989,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1990,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1991,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1992,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1995,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1996,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KDX200"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KDX220"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1991,
+    "model": "KDX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1992,
+    "model": "KDX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KDX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KDX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KLX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KLX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KLX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KLX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KLX125L"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KLX125L"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KLX125L"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KLX125L"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KLX250R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KLX250R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1995,
+    "model": "KLX250R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1996,
+    "model": "KLX250R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2007,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2009,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2010,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2012,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2013,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2014,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2018,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2019,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2020,
+    "model": "KLX250S"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2009,
+    "model": "KLX250SF"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2010,
+    "model": "KLX250SF"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2007,
+    "model": "KLX300"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2020,
+    "model": "KLX300R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KLX400R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KLX400SR"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2008,
+    "model": "KLX450R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2009,
+    "model": "KLX450R"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1989,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1990,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1991,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1992,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1995,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1996,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KX125"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1989,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1990,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1991,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1992,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1995,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1996,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2007,
+    "model": "KX250"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2005,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2007,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2008,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2009,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2010,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2011,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2012,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2013,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2014,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2015,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2016,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2017,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2018,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2019,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2020,
+    "model": "KX250F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2006,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2007,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2008,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2009,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2010,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2011,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2012,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2013,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2014,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2015,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2016,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2017,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2018,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2019,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2020,
+    "model": "KX450F"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1989,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1990,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1991,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1992,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1993,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1994,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1995,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1996,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1997,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1998,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 1999,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2000,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2001,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2002,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2003,
+    "model": "KX500"
+  },
+  {
+    "make": "KAWASAKI",
+    "year": 2004,
+    "model": "KX500"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "Z 125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "Z 125L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "Z 400"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "Z 400"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "Z 400"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 400"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 400"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 400E"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2011,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "Z 400S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "Z 400SM"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "DR200S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1993,
+    "model": "DR350S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1994,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1995,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1999,
+    "model": "DR350SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "DR650S"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1999,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2011,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "DR650SE"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1991,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1992,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1993,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1994,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1995,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1999,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RM125"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1991,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1992,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1993,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1994,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1995,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1999,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "RM250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1991,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1992,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1993,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1994,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1995,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1999,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2000,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2001,
+    "model": "RM80"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2002,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "RM85"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2003,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "RM85L"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1989,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1990,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1991,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1992,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1993,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1994,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1995,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1996,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1997,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 1998,
+    "model": "RMX250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2010,
+    "model": "RMX450Z"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "RMX450Z"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "RMX450Z"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "RMX450Z"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2004,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2010,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2011,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "RMZ250"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2005,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2006,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2007,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2008,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2009,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2010,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2011,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2012,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2013,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2014,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2015,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2016,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2017,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2018,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2019,
+    "model": "RMZ450"
+  },
+  {
+    "make": "SUZUKI",
+    "year": 2020,
+    "model": "RMZ450"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1992,
+    "model": "WR200"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1991,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1992,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1993,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1994,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1995,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1996,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1997,
+    "model": "WR250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "WR250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "WR250R"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "WR250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "WR250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "WR250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "WR250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1998,
+    "model": "WR400F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1999,
+    "model": "WR400F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2000,
+    "model": "WR400F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "WR426F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "WR426F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "WR450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1992,
+    "model": "WR500"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1993,
+    "model": "WR500"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1987,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1988,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1989,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1990,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1991,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1992,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1993,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1994,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1995,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1996,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1997,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1998,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1999,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2000,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ125"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ125X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1987,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1988,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1989,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1990,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1991,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1992,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1993,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1994,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1995,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1996,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1997,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1998,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1999,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2000,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ250"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ250F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ250FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1989,
+    "model": "YZ250WR"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1990,
+    "model": "YZ250WR"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ250X"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1998,
+    "model": "YZ400F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1999,
+    "model": "YZ400F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2000,
+    "model": "YZ426F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "YZ426F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "YZ426F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ450F"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ450FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ450FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ450FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ450FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ450FX"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ65"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ65"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1993,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1994,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1995,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1996,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1997,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1998,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 1999,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2000,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2001,
+    "model": "YZ80"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2002,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2003,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2004,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2005,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2006,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2007,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2008,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2009,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2010,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2011,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2012,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2013,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2014,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2015,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2016,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2017,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2018,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2019,
+    "model": "YZ85"
+  },
+  {
+    "make": "YAMAHA",
+    "year": 2020,
+    "model": "YZ85"
   }
 ]
 
