@@ -78,20 +78,20 @@ export function refreshRMVehicles(axios, logger) {
     for (let i = 0; i < types.length; i++) {
       const type = types[i];
       if (+type.id === 0) continue;
-      await wait(3000)
+      await wait(10000);
       const years = await getVehicleTypeYears(type.id);
       logger.debug(`Got ${ years.length } years for type: ${ type.name } ${ i + 1 }/${ types.length }`);
       for (let i = 0; i < years.length; i++) {
-        const year  = years[i];
-        await wait(3000)
+        const year = years[i];
+        await wait(10000);
         const makes = await getVehicleMakes(type.id, year.id);
         logger.debug(`Got ${ makes.length } makes for year: ${ year.name } ${ i + 1 }/${ years.length }`);
         for (let i = 0; i < makes.length; i++) {
-          const make   = makes[i];
-          await wait(3000)
+          const make = makes[i];
+          await wait(10000);
           const models = await getVehiclesModels(type.id, year.id, make.id);
           logger.debug(`Got ${ models.length } models for make: ${ make.name } ${ i + 1 }/${ makes.length }`);
-          vehicleCounter += 1;
+          vehicleCounter += models.length;
           await updateVehicles(models.map(model => ({
             type:  formatValue(type.name),
             year:  formatValue(year.name),
