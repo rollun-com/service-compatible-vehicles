@@ -93,10 +93,9 @@ export function refreshRMVehicles(axios, logger) {
           logger.debug(`Got ${ models.length } models for make: ${ make.name } ${ i + 1 }/${ makes.length }`);
           vehicleCounter += models.length;
           await updateVehicles(models.map(model => ({
-            type:  formatValue(type.name),
             year:  formatValue(year.name),
-            make:  formatValue(make.name),
-            model: formatValue(model.name)
+            make:  formatValue(make.name).toUpperCase(),
+            model: formatValue(model.name).toUpperCase()
           })));
         }
       }
