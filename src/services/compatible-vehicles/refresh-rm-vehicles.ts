@@ -19,26 +19,11 @@ export interface RMVehicle {
   modelHashCache?: Array<string>;
 }
 
-
-function isDoubleByte(str) {
-  for (var i = 0, n = str.length; i < n; i++) {
-    if (str.charCodeAt(i) > 255) {
-      return true;
-    }
-  }
-  return false;
-}
-
 function formatValue(val: string) {
   const start         = `\u{80}`;
   const end           = `\u{10FFF0}`;
   const searchPattern = new RegExp(`[${ start }-${ end }]`, `g`);
-  if (val.split('').some(isDoubleByte)) {
-    globalLogger.notice('Got unicode char in RM vehicle value', {
-      val,
-      char: val.split('').find(isDoubleByte)
-    });
-  }
+
   return val
     .split('')
     .filter(c => c.charCodeAt(0) < 128)
