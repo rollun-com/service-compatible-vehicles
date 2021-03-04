@@ -119,7 +119,7 @@ export async function findCompatiblesController(req: RequestWithAddons, res: Res
   const makeInvalidParamsError = (text: string) => res.status(400).send({ error: text });
 
   try {
-    const { make, model, year } = req.query;
+    const { make, model, year } = req.query as Record<string, string>;
     if (!make) return makeInvalidParamsError('`make` is required');
     if (!model) return makeInvalidParamsError('`model` is required');
     if (!year) return makeInvalidParamsError('`year` is required');
