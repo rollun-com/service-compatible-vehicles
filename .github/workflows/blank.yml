@@ -38,5 +38,5 @@ jobs:
         run: docker build -f Dockerfile -t ghcr.io/$GITHUB_REPOSITORY/$(basename $PWD)/image:latest .
       - name: Push
         run: docker push ghcr.io/$GITHUB_REPOSITORY/$(basename $PWD)/image:latest
-      - name: trigger D2C deploy hook
-        run: curl ${{secrets.D2C_DEPLOY_HOOK}}
+#      - name: trigger D2C deploy hook
+#        run: curl ${{secrets.D2C_DEPLOY_HOOK}}
