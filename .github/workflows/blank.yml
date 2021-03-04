@@ -9,7 +9,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+env:
+  IMAGE: ghcr.io/$GITHUB_REPOSITORY/$(basename $PWD)/prod:latest
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -35,8 +36,8 @@ jobs:
       - name: Docker login
         run: docker login ghcr.io -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
       - name: Build
-        run: docker build -f Dockerfile -t ghcr.io/$GITHUB_REPOSITORY/$(basename $PWD)/image:latest .
+        run: docker build -f Dockerfile -t ${{env.IMAGE}} .
       - name: Push
-        run: docker push ghcr.io/$GITHUB_REPOSITORY/$(basename $PWD)/image:latest
+        run: docker push ${{env.IMAGE}}
 #      - name: trigger D2C deploy hook
 #        run: curl ${{secrets.D2C_DEPLOY_HOOK}}
