@@ -5,6 +5,7 @@ import { findCompatiblesForAllEbayVehicles } from './find-compatibles-for-all-eb
 import EbayVehiclesCache                     from './ebay-vehicles-cache';
 import { refreshRMVehicles }                 from './refresh-rm-vehicles';
 import { globalLogger }                      from '../../../server';
+import { updateCompatibleVehicleList }       from './update-compatible-vehicle-list';
 
 export const ebayVehiclesCache = new EbayVehiclesCache();
 
@@ -150,4 +151,23 @@ export async function findCompatiblesForAllEbayVehiclesController(req: RequestWi
       });
     })
     .finally(() => inProgress = false);
+}
+
+let updatingProcessIsInProgress = false;
+
+export async function updateCompatibleVehicleListController(req: RequestWithAddons, res: Response) {
+  if (updatingProcessIsInProgress) {
+    return res.status(503).send({ error: 'Process is already running' });
+  }
+
+  res.send({ ok: true });
+  updatingProcessIsInProgress = true;
+  updateCompatibleVehicleList(req.logger)
+    .catch(err => {
+      req.logger.error(`UpdateCompatibleVehicleList: Error`, {
+        message: err.message,
+        stack:   err.stack,
+      });
+    })
+    .finally(() => updatingProcessIsInProgress = false);
 }
