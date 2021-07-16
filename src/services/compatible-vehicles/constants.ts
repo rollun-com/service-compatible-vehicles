@@ -20,3 +20,6 @@ export const MAKES_ALIASES: Readonly<Array<{ebay_brand_id: string, rm_brand_id: 
     'rm_brand_id':   'tracker'
   }
 ];
+
+export const MONTHS = [ "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December" ];

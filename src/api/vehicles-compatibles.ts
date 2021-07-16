@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import {
   findCompatiblesBulkController,
-  findCompatiblesController, findCompatiblesForAllEbayVehiclesController, refreshRockyMountainVehiclesController
+  findCompatiblesController, findCompatiblesForAllEbayVehiclesController, refreshRockyMountainVehiclesController,
+  updateCompatibleVehicleListController
   // refreshEbayVehiclesController,
   // refreshRockyMountainVehiclesController
 }                 from '../services/compatible-vehicles/controller';
@@ -143,5 +144,27 @@ router.post('/api/v1/FindCompatibles', findCompatiblesBulkController);
 
 router.post('/api/v1/FindAllCompatiblesForEbay', findCompatiblesForAllEbayVehiclesController);
 
+/**
+ * @swagger
+ * /api/v1/UpdateCompatibleVehicleList:
+ *   put:
+ *     tags:
+ *       - "/api/v1"
+ *     description: This method takes new list of compatibles from Ebay and updates vehicles that we have
+ *     responses:
+ *       200:
+ *         description: OK
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: "#/definitions/OKResponse"
+ *       503:
+ *         description: Already in progress
+ *         schema:
+ *           $ref: "#/definitions/Error"
+ */
+
+
+router.put('/api/v1/UpdateCompatibleVehicleList', updateCompatibleVehicleListController);
 
 export default router;
